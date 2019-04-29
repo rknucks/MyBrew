@@ -42,7 +42,7 @@ class LoginForm extends Component {
                     })
                     // update the state to redirect to fridge page
                     this.setState({
-                        redirectTo: '/BeerFridge/nav'
+                        redirectTo: '/'
                     })
                 }
             }).catch(error => {
