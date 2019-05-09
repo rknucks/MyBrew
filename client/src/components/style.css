@@ -1,0 +1,17 @@
+a.beerFridgebtn{
+    background-image: url("/images/BeerFridgeButtonFinal.jpg");
+    background-repeat: no-repeat;
+     color: red;
+     display: inline-block;
+     width: 193px;
+     height: 94px;
+     text-indent: -10000px;
+    
+   }
+   h1 {
+     background-color: rgb(230, 143, 13);
+   }
+   .form-control {
+     margin-left: 20%;
+     width: 60%;
+   }

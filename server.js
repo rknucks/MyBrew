@@ -2,10 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const session = require('express-session')
-const routes = require('./routes')
+const session = require('express-session');
+const routes = require('./routes');
+const cors = require('cors');
 // const MongoStore = require('connect-mongo')(session)
-const passport = require('./controllers/passport');
+// const passport = require('./controllers/passport');
 const app = express();
 const PORT = process.env.PORT || 3001;
 // Route requires
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3001;
 //const htmlFile = require('../public/guest.html');
 
 // MIDDLEWARE
+app.use(cors());
 app.use(morgan('dev'))
 app.use(
 	bodyParser.urlencoded({
@@ -34,8 +36,8 @@ app.use(
 app.use(routes);
 
 // Passport
-app.use(passport.initialize())
-app.use(passport.session()) // calls the deserializeUser
+// app.use(passport.initialize())
+// app.use(passport.session()) // calls the deserializeUser
 
 // Connect to the Mongo DB
 mongoose.connect(
@@ -55,3 +57,4 @@ mongoose.connect(
 app.listen(PORT, function() {
 	console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
+  

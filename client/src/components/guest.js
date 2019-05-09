@@ -26,6 +26,7 @@ class Guest extends Component {
                             </div>
                         </div>
                     </div>
+
                     <div className="row" id="brews-container">
                         <div className="container text-center my-3">
                             <div className="row mx-auto my-auto">
@@ -47,7 +48,7 @@ class Guest extends Component {
                         </div>
                     </div> */}
 
-                    <BrewerySearch >
+                    <BrewerySearch>
                     
                     </BrewerySearch>
                     <div>
@@ -62,13 +63,15 @@ class Guest extends Component {
                             <input className="form-control form-control-lg" id="zip-field" type="text"
                                placeholder="ZipCode" />
                         </div>
+
+
                         <div className="col-4">
                             <button type="button" className="btn btn-light" id="find-button">I like beer.</button>
                         </div>
-                    </div> */}
+                    </div> 
 
 
-                    {/* <div className="modal fade modal-xl" id="beerModal" tabindex="-1" role="dialog" aria-labelledby="beerInfo"
+                     <div className="modal fade modal-xl" id="beerModal" tabindex="-1" role="dialog" aria-labelledby="beerInfo"
                         aria-hidden="true">
                         <div className="modal-dialog modal-xl" role="document">
                             <div className="modal-content">
@@ -84,17 +87,19 @@ class Guest extends Component {
                                     </p>
                                     <p id="BeerDetails">
                                     </p>
+
                                 </div>
                                 <div className="modal-footer modal-xl">
                                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="button" className="btn btn-primary" id="thumbsup"><i className="far fa-thumbs-up"></i>
                                         Favorite</button>
                                 </div>
+
                             </div>
                         </div>
-                    </div> */}
+                    </div> 
 
-                    {/* <div className="modal fade modal-xl" id="favModal" tabindex="-1" role="dialog" aria-labelledby="favInfo"
+                     <div className="modal fade modal-xl" id="favModal" tabindex="-1" role="dialog" aria-labelledby="favInfo"
                         aria-hidden="true">
                         <div className="modal-dialog modal-xl" role="document">
                             <div className="modal-content">

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 
 class LoginForm extends Component {
@@ -27,7 +27,7 @@ class LoginForm extends Component {
         console.log('handleSubmit')
 
         axios
-            .post('/user/login', {
+            .post('/api/user/login', {
                 username: this.state.username,
                 password: this.state.password
             })
@@ -35,17 +35,25 @@ class LoginForm extends Component {
                 console.log('login response: ')
                 console.log(response)
                 if (response.status === 200) {
+                    console.log("finished")
                     // update App.js state
-                    this.props.updateUser({
-                        loggedIn: true,
-                        username: response.data.username
-                    })
+                    // localStorage.clear();
+                   // localStorage.setItem("_id", response.data.user._id)
+                //    localStorage.setItem("loggedIn", true);
+                    // this.props.updateUser({
+                    //     loggedIn: true,
+                    //     username: response.data.username
+                    // })
                     // update the state to redirect to fridge page
-                    this.setState({
-                        redirectTo: '/'
-                    })
+                    
                 }
-            }).catch(error => {
+            }).then(() => {
+                console.log("you're in")
+                this.setState({
+                    redirectTo: '/BeerFridge'
+                })
+            })
+            .catch(error => {
                 console.log('login error: ')
                 console.log(error);
                 
@@ -55,6 +63,7 @@ class LoginForm extends Component {
     render() {
         if (this.state.redirectTo) {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
+            
         } else {
             return (
                 <div>
